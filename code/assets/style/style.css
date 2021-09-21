@@ -1,0 +1,37 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    min-height: 854px;
+    background-image: url('https://i0.wp.com/wallpaperaccess.com/full/2344041.jpg');
+    background-color: #000000;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-bottom: 20vh;
+}
+.container{
+    text-align: center;
+    padding: 20px;
+}
+.page-title{
+    color: #ffffff;
+    margin: 5px 0;
+}
+h2{
+    color: white;
+}
+button{
+    padding: .8rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+button:hover{
+    background-color: rgb(218, 26, 26);
+    color: white;
+    transform: scale(1.1);
+    filter: brightness(100%);
+}
+.opcoes{
+    color: white;
+}
