@@ -101,7 +101,6 @@ function sortearCarta() {
 
     //exibindo opcoes de atributos para o player
     exibirCartaJogador()
-    //exibirCartaComputador()
 };
 
 //função para obter o valor do input
