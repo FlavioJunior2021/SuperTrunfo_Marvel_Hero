@@ -1,6 +1,7 @@
 //Verificar o que acontece caso você não selecione nenhum dos atributos e como solucionar
-//Utilizar personagens que você gosta para criar as cartas e compartilhe com o pessoal lá na comunidade do Discord!
+//Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
 //Adicionar a imagem do personagem assim que você selecionar a carta dele
+//Transformar as funções exibirCartaMaquina() e exibirCartaJogador() em apenas uma, chamada exibirCarta(), utilizando para isso a passagem de parâmetros
 
 var carta1 = {
     imagem: "https://i.pinimg.com/474x/80/03/cd/8003cddfc723914e236f047793f25d7d.jpg",
@@ -197,10 +198,4 @@ function exibibirCartaMaquina(){
     divCartaMaquina.innerHTML = moldura+tagHTML+opcoesValor+"</div>";
 }
 
-
-//function exibirCartaComputador(){
-    //var heroiSorteadoMaquina = document.getElementById("heroiMaquina");
-    //heroiSorteadoMaquina.innerHTML = `${cartaMaquina.nome}<br><p>Carta do computador</p><br><img id='imagemDoComputador'src="${cartaMaquina.imagem}">`
-//};
-//exibirBaralho(); 
 
