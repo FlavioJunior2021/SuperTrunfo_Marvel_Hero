@@ -81,12 +81,10 @@ button:hover{
     margin-left: 15px;
 }
 #imagemDoComputador:hover{
-    transform: scale(1.1);
-    filter: brightness(100%);
+    filter: brightness(60%);
 }
 #imagemJogador:hover{
-    transform: scale(1.1);
-    filter: brightness(100%);
+    filter: brightness(60%);
 }
 .exibir-cartas{
     display: flex;
