@@ -101,6 +101,7 @@ function sortearCarta() {
     //exibindo opcoes de atributos para o player
     exibirOpcoes()
     exibirCartaJogador()
+    exibirCartaComputador()
 };
 
 //função para imprimir opções
@@ -146,8 +147,12 @@ function jogar(){
 
 function exibirCartaJogador(){
     var heroiSorteado = document.getElementById("heroiJogador");
-    heroiSorteado.innerHTML = `${cartaPlayer.nome} <br><img id='imagemJogador'src="${cartaPlayer.imagem}">`
+    heroiSorteado.innerHTML = `${cartaPlayer.nome}<br><p>Essa é sua carta</p><br><img id='imagemJogador'src="${cartaPlayer.imagem}">`
 };
+function exibirCartaComputador(){
+    var heroiSorteadoMaquina = document.getElementById("heroiMaquina");
+    heroiSorteadoMaquina.innerHTML = `${cartaMaquina.nome}<br><p>Carta do computador</p><br><img id='imagemDoComputador'src="${cartaMaquina.imagem}">`
+}
 function exibirBaralho(){
     var elemento = "";
     for(var j = 0; j < baralho.length; j++){

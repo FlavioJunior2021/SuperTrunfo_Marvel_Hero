@@ -74,8 +74,23 @@ button:hover{
     height: 450px;
     border-radius: 5px;
 }
+#imagemDoComputador{
+    width: 350px;
+    height: 450px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+#imagemDoComputador:hover{
+    transform: scale(1.1);
+    filter: brightness(100%);
+}
 #imagemJogador:hover{
     transform: scale(1.1);
     filter: brightness(100%);
 }
-
+.exibir-cartas{
+    display: flex;
+    padding-left: 23%;
+    flex-direction: row;
+    align-items: center;
+}
