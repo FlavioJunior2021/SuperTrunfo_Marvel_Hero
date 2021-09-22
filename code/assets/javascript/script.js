@@ -100,6 +100,7 @@ function sortearCarta() {
 
     //exibindo opcoes de atributos para o player
     exibirOpcoes()
+    exibirCartaJogador()
 };
 
 //função para imprimir opções
@@ -143,12 +144,16 @@ function jogar(){
     };
 };
 
+function exibirCartaJogador(){
+    var heroiSorteado = document.getElementById("heroiJogador");
+    heroiSorteado.innerHTML = `${cartaPlayer.nome} <br><img id='imagemJogador'src="${cartaPlayer.imagem}">`
+};
 function exibirBaralho(){
     var elemento = "";
     for(var j = 0; j < baralho.length; j++){
-        elemento +=  "<img class='carta-imagem' src=" + baralho[j].imagem +">";
+        elemento +=  "<img class='carta-jogador' src=" + baralho[j].imagem +">";
     };
     var cartajogador = document.getElementById("carta-jogador");
     cartajogador.innerHTML = elemento;
 };
-exibirBaralho();
+//exibirBaralho(); 
