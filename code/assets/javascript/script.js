@@ -143,16 +143,24 @@ function jogar(){
         aviso.innerHTML = ""
         document.getElementById("btnJogar").disabled = true;
     };
+    exibibirCartaMaquina()
 };
 function reiniciar(){
     var resultado = document.getElementById("resultado");
     var aviso = document.getElementById("aviso-erro");
     var divCartaPlayer = document.getElementById("carta-jogador");
+    var divCartaMaquina = document.getElementById("carta-maquina")
     var moldura = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png" style=" width: inherit; height: inherit; position: absolute;">';
     resultado.innerHTML = ""
     aviso.innerHTML = ""
     divCartaPlayer.style.backgroundImage=""
     divCartaPlayer.innerHTML = moldura+"</div>"
+    divCartaMaquina.style.backgroundImage=""
+    divCartaPlayer.innerHTML = moldura+"</div>"
+    divCartaMaquina.style.backgroundImage=""
+    divCartaMaquina.innerHTML = moldura+"</div>"
+    divCartaMaquina.style.backgroundImage=""
+    divCartaMaquina.innerHTML = moldura+"</div>"
     document.getElementById("btnSortear").disabled = false
 };
 function exibirBaralho(){
@@ -174,9 +182,20 @@ function exibirCartaJogador(){
    for(var atributo in cartaPlayer.atributos){
        opcoesValor += "<input type='radio' name='atributo' value='"+atributo+"'>"+""+atributo+"<br>"+" "+cartaPlayer.atributos[atributo]+"<br>";
    };
-   var nome = `<p clas='carta-subtitle'${cartaPlayer.nome}>`
-   divCartaPlayer.innerHTML = moldura+nome+tagHTML+opcoesValor+"</div>"
+   //var nome = cartaPlayer.nome
+   divCartaPlayer.innerHTML = moldura+tagHTML+opcoesValor+"</div>"
 };
+function exibibirCartaMaquina(){
+    var divCartaMaquina = document.getElementById("carta-maquina")
+    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
+    var tagHTML = "<div id='opcoes' class='carta-status'>"
+    var moldura = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png" style=" width: inherit; height: inherit; position: absolute;">';
+    var opcoesValor = "";
+    for(var atributo in cartaMaquina.atributos){
+        opcoesValor += "<p type='text' name='atributo' value='"+atributo+"'>"+""+atributo+"</p>"+"<br>"+" "+cartaMaquina.atributos[atributo]+"<br>";
+    };
+    divCartaMaquina.innerHTML = moldura+tagHTML+opcoesValor+"</div>";
+}
 
 
 //function exibirCartaComputador(){
