@@ -118,9 +118,16 @@ function exibirOpcoes(){
 //função para obter o valor do input
 function obterAtributo(){
     var radioAtributo = document.getElementsByName("atributo");
+    var aviso = document.getElementById("aviso-erro");
     for(var i = 0; i < radioAtributo.length; i++){
         if(radioAtributo[i].checked==true){
             return radioAtributo[i].value
+        };
+    };
+    for(var i = 0; i< radioAtributo.length; i++){
+        if((radioAtributo[i]).checked===false){
+            aviso.innerHTML = "<h2>SELECIONE UM ATRIBUTO</h2>"
+            obterAtributo()
         };
     };
 };
@@ -129,18 +136,22 @@ function obterAtributo(){
 function jogar(){
     var atributoSelecionado = obterAtributo()
     var resultado = document.getElementById("resultado");
+    var aviso = document.getElementById("aviso-erro");
 
     var valorCartaPlayer = cartaPlayer.atributos[atributoSelecionado];
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
 
     if(valorCartaPlayer>valorCartaMaquina){
         resultado.innerHTML = "<h2>VOCÊ VENCEU</h2>"
+        aviso.innerHTML = ""
         document.getElementById("btnJogar").disabled = true;
     } else if(valorCartaPlayer<valorCartaMaquina){
         resultado.innerHTML = "<h2>VOCÊ PERDEU</h2>"
+        aviso.innerHTML = ""
         document.getElementById("btnJogar").disabled = true;
     } else{
         resultado.innerHTML = "<h2>EMPATE</h2>"
+        aviso.innerHTML = ""
         document.getElementById("btnJogar").disabled = true;
     };
 };
