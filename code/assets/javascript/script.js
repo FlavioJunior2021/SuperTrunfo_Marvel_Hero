@@ -151,7 +151,7 @@ function exibirCartaJogador(){
 function exibirBaralho(){
     var elemento = "";
     for(var j = 0; j < baralho.length; j++){
-        elemento +=  "<img class='carta-jogador' src=" + baralho[j].imagem +">";
+        elemento +=  "<img id='carta-jogador' src=" + baralho[j].imagem +">";
     };
     var cartajogador = document.getElementById("carta-jogador");
     cartajogador.innerHTML = elemento;

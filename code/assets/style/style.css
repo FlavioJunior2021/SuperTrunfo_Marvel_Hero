@@ -69,3 +69,7 @@ button:hover{
     height: 160px;
     margin: 1.5rem;
 }
+#imagemJogador{
+    width: 300px;
+    height: 450px;
+}
