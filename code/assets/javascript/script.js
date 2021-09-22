@@ -66,7 +66,7 @@ var carta6 = {
     imagem: "https://i1.wp.com/chefaodefase.com.br/Pt-br/wp-content/uploads/2018/02/Dr-Estranho5.jpg",
     nome: "Doutor Estranho",
     atributos:{
-        ataque:8,
+        ataque:9,
         defesa:9,
         acrobacias:5,
         magia:10,
@@ -74,3 +74,81 @@ var carta6 = {
         inteligencia:9
     }
 };
+
+var baralho = [carta1,carta2,carta3,carta4,carta5,carta6];
+
+//criando variaveis para guardar carta da maquina e carta do jogador
+var cartaMaquina
+var cartaPlayer
+
+function sortearCarta() {
+    
+    //sorteando carta da maquina
+    var numeroCartaMaquina = parseInt(Math.random()*baralho.length);
+    cartaMaquina = baralho[numeroCartaMaquina];
+
+    //sorteando carta do jogador
+    var numeroCartaPlayer = parseInt(Math.random()*baralho.length);
+    while(numeroCartaPlayer==numeroCartaMaquina){
+        var numeroCartaPlayer = parseInt(Math.random()*baralho.length);
+    }
+    cartaPlayer = baralho[numeroCartaPlayer];
+
+    //habilitando botão jogar e desabilitando botão sortear
+    document.getElementById("btnSortear").disabled = true
+    document.getElementById("btnJogar").disabled = false;
+
+    //exibindo opcoes de atributos para o player
+    exibirOpcoes()
+};
+
+//função para imprimir opções
+function exibirOpcoes(){
+    var opcoes = document.getElementById("opcoes");
+    var opcoesValor = "";
+
+    for(var atributo in cartaPlayer.atributos){
+        opcoesValor += "<input type='radio' name='atributo' value='"+atributo+"'>"+atributo;
+    };
+    opcoes.innerHTML = opcoesValor;
+};
+
+//função para obter o valor do input
+function obterAtributo(){
+    var radioAtributo = document.getElementsByName("atributo");
+    for(var i = 0; i < radioAtributo.length; i++){
+        if(radioAtributo[i].checked==true){
+            return radioAtributo[i].value
+        };
+    };
+};
+
+//função jogar, responsavel por toda a lógica do jogo
+function jogar(){
+    var atributoSelecionado = obterAtributo()
+    var resultado = document.getElementById("resultado");
+
+    var valorCartaPlayer = cartaPlayer.atributos[atributoSelecionado];
+    var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
+
+    if(valorCartaPlayer>valorCartaMaquina){
+        resultado.innerHTML = "<h2>VOCÊ VENCEU</h2>"
+        document.getElementById("btnJogar").disabled = true;
+    } else if(valorCartaPlayer<valorCartaMaquina){
+        resultado.innerHTML = "<h2>VOCÊ PERDEU</h2>"
+        document.getElementById("btnJogar").disabled = true;
+    } else{
+        resultado.innerHTML = "<h2>EMPATE</h2>"
+        document.getElementById("btnJogar").disabled = true;
+    };
+};
+
+function exibirBaralho(){
+    var elemento = "";
+    for(var j = 0; j < baralho.length; j++){
+        elemento +=  "<img class='carta-imagem' src=" + baralho[j].imagem +">";
+    };
+    var cartajogador = document.getElementById("carta-jogador");
+    cartajogador.innerHTML = elemento;
+};
+exibirBaralho();
