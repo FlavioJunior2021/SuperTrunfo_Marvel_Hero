@@ -145,6 +145,7 @@ function jogar(){
         resultado.innerHTML = "<h2>VOCÊ VENCEU</h2>"
         aviso.innerHTML = ""
         document.getElementById("btnJogar").disabled = true;
+        document.getElementById("btnReiniciar").disabled = false;
     } else if(valorCartaPlayer<valorCartaMaquina){
         resultado.innerHTML = "<h2>VOCÊ PERDEU</h2>"
         aviso.innerHTML = ""
@@ -155,7 +156,17 @@ function jogar(){
         document.getElementById("btnJogar").disabled = true;
     };
 };
-
+function reiniciar(){
+    var resultado = document.getElementById("resultado");
+    var aviso = document.getElementById("aviso-erro");
+    resultado.innerHTML = ""
+    aviso.innerHTML = ""
+    var heroiSorteado = document.getElementById("heroiJogador");
+    heroiSorteado.innerHTML = ""
+    var heroiSorteadoMaquina = document.getElementById("heroiMaquina");
+    heroiSorteadoMaquina.innerHTML = ""
+    document.getElementById("btnSortear").disabled = false
+};
 function exibirCartaJogador(){
     var heroiSorteado = document.getElementById("heroiJogador");
     heroiSorteado.innerHTML = `${cartaPlayer.nome}<br><p>Essa é sua carta</p><br><img id='imagemJogador'src="${cartaPlayer.imagem}">`
