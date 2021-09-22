@@ -47,8 +47,8 @@ button:hover{
     margin-bottom: 10px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+   flex-wrap: wrap;
 }
 #carta-jogador h3{
     text-align: center;
@@ -66,10 +66,18 @@ button:hover{
     width: 100%;
     height: 100%;
 }
-
+.carta-status input{
+    text-align: justify;
+    z-index: 2;
+}
 .carta-status{
     height: 160px;
-    margin: 1.5rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    z-index: 2;
 }
 .wrapper{
     display: flex;
@@ -101,6 +109,17 @@ form{
   background-position-x: 5px;
   background-position-y: 10px;
   border-radius: 33px;
+}
+.carta-status p {
+    margin-bottom: 2rem;
+}
+.carta-subtitle{
+    z-index: 2;
+    position: absolute;
+    top: 16px;
+    left: 37px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 /**
