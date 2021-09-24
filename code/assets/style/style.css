@@ -111,29 +111,8 @@ form{
     font-weight: 800;
     text-transform: uppercase;
 }
-
-/**
-#imagemJogador{
-    width: 350px;
-    height: 450px;
-    border-radius: 5px;
-}
-#imagemDoComputador{
-    width: 350px;
-    height: 450px;
-    border-radius: 5px;
-    margin-left: 15px;
-}
-#imagemDoComputador:hover{
-    filter: brightness(60%);
-}
-#imagemJogador:hover{
-    filter: brightness(60%);
-}
-.exibir-cartas{
+#exibir-baralho{
     display: flex;
-    padding-left: 23%;
-    flex-direction: row;
-    align-items: center;
+    margin-left: 150px;
 }
-**/
+
