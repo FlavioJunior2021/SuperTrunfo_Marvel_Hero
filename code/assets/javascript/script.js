@@ -102,9 +102,6 @@ function sortearCarta() {
     //exibindo opcoes de atributos para o player
     exibirCartaJogador()
 };
-
-exibirBaralho();
-
 //função para obter o valor do input
 function obterAtributo(){
     var radioAtributo = document.getElementsByName("atributo");
@@ -165,15 +162,15 @@ function reiniciar(){
     divCartaMaquina.innerHTML = moldura+"</div>"
     document.getElementById("btnSortear").disabled = false
 };
-function exibirBaralho(){
-    var elemento = "";
-    var mostrarBaralho = document.getElementById("exibir-baralho")
-    for(var j = 0; j < baralho.length; j++){
-        elemento +=  '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png" style=" width: 150px; height: 150px; position: relative;"></img>';
-        mostrarBaralho.style.backgroundImage = `url(${baralho})`
-    };
-    mostrarBaralho.innerHTML = elemento;
-};
+//function exibirBaralho(){
+    //var elemento = "";
+    //var mostrarBaralho = document.getElementById("exibir-baralho")
+    //for(var j = 0; j < baralho.length; j++){
+       // elemento +=  '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png" style=" //width: 150px; height: 150px; position: relative;"></img>';
+       // mostrarBaralho.style.backgroundImage = `url(${baralho})`
+    //};
+    //mostrarBaralho.innerHTML = elemento;
+//};
 
 function exibirCartaJogador(){
    var divCartaPlayer = document.getElementById("carta-jogador");
