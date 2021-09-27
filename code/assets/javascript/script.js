@@ -6,7 +6,7 @@
 
 var carta1 = {
     nome: "Homem aranha",
-    imamgem: "https://i.pinimg.com/originals/44/10/83/441083c0c8d8edeb6f0187e74147dd25.jpg",
+    imagem: "https://i.pinimg.com/originals/44/10/83/441083c0c8d8edeb6f0187e74147dd25.jpg",
     atributos:{
       forca: 85,
       defesa: 75,
@@ -15,7 +15,7 @@ var carta1 = {
   };
   var carta2 = {
     nome: "Capitão America",
-    imamgem: "http://1.bp.blogspot.com/-o1c-lwwMEIs/Vk5pozoCcXI/AAAAAAAAAsQ/HigEX_SpjXQ/s1600/capitao_america.jpg",
+    imagem: "http://1.bp.blogspot.com/-o1c-lwwMEIs/Vk5pozoCcXI/AAAAAAAAAsQ/HigEX_SpjXQ/s1600/capitao_america.jpg",
     atributos:{
       forca: 90,
       defesa: 100,
@@ -25,7 +25,7 @@ var carta1 = {
   };
   var carta3 = {
     nome: "Homem de Ferro",
-    imamgem: "http://3.bp.blogspot.com/-AdDVQ-NgdGE/UNBKmhr0-KI/AAAAAAAABp8/p_GiuXASIPs/s400/Iron_Man_bleeding_edge.jpg",
+    imagem: "http://3.bp.blogspot.com/-AdDVQ-NgdGE/UNBKmhr0-KI/AAAAAAAABp8/p_GiuXASIPs/s400/Iron_Man_bleeding_edge.jpg",
     atributos:{
        forca: 80,
       defesa: 88,
@@ -34,7 +34,7 @@ var carta1 = {
   };
   var carta4 = {
     nome: "Hulk",
-    imamgem: "http://pm1.narvii.com/6933/26ab0489816e81efc87e9de66658888ecd5eb89ar1-424-512v2_00.jpg",
+    imagem: "http://pm1.narvii.com/6933/26ab0489816e81efc87e9de66658888ecd5eb89ar1-424-512v2_00.jpg",
     atributos:{
        forca: 100,
       defesa: 100,
@@ -43,7 +43,7 @@ var carta1 = {
   };
   var carta5 = {
     nome: "Doutor Estranho",
-    imamgem: "https://westfieldcomics.com/wow/art/large/NOV180933.jpg",
+    imagem: "https://westfieldcomics.com/wow/art/large/NOV180933.jpg",
     atributos:{
        forca: 80,
       defesa: 85,
@@ -52,7 +52,7 @@ var carta1 = {
   };
   var carta6 = {
     nome: "Capitã Marvel",
-    imamgem: "https://i.pinimg.com/originals/b9/b5/3a/b9b53a947db0af96e4f60dfa2fd233d3.jpg",
+    imagem: "https://i.pinimg.com/originals/b9/b5/3a/b9b53a947db0af96e4f60dfa2fd233d3.jpg",
     atributos:{
        forca: 100,
       defesa: 100,
@@ -76,7 +76,7 @@ var carta1 = {
   
      document.getElementById("btnSortear").disabled = true;
      document.getElementById("btnJogar").disabled = false;
-     exibirOpcoes()
+     exibirCartaJogador()
   }
   function exibirOpcoes(){
     var opcoes = document.getElementById("opcoes");
@@ -94,8 +94,8 @@ var carta1 = {
         return radioAtributos[i].value;
       };
     };
-    for(var j = 0; j<radioAtributos.length; j++){
-        if(radioAtributos[j].checked === false){
+    for(var i = 0; i<radioAtributos.length; i++){
+        if(radioAtributos[i].checked === false){
             resultado.innerHTML = "<h2>Selecione um atributo</h2>"
             obterAtributo()
         };
@@ -119,4 +119,18 @@ var carta1 = {
       resultado.innerHTML = "<h2>Empate!</h2>"
       document.getElementById("btnJogar").disabled = true;
     }
+  }
+  function exibirCartaJogador(){
+    var divCartaJogador = document.getElementById("carta-jogador");
+    var divCartaMaquina = document.getElementById("carta-maquina");
+    divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`
+    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
+    var moldura = "<img src='https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png' style=' width: inherit; height: inherit; position: absolute;'>"
+    var tagHTML = "<div id='opcoes' class='carta-status'>"
+    var opcoesTexto = ""
+    for(var atributo in cartaJogador.atributos){
+      opcoesTexto += "<input type='radio' name='atributo' class='inputOpcoes' value='"+ atributo +"'>"+atributo+ " " + cartaJogador.atributos[atributo]+"<br>";
+    }
+    var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`
+    divCartaJogador.innerHTML = moldura +  tagHTML +nome + opcoesTexto + "</div>"
   }
