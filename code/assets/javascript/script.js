@@ -84,12 +84,15 @@ var carta1 = {
     var radioAtributos = document.getElementsByName("atributo");
     var resultado = document.getElementById("resultado");
     for(var i = 0; i<radioAtributos.length; i++){
-      if(radioAtributos[i].checked==true){
+      if(radioAtributos[i].checked == true){
         return radioAtributos[i].value;
-      } else if(radioAtributos[i].checked===false){
-        resultado.innerHTML = "<h2>Selecione um atributo</h2>"
-        obterAtributo()
-      }
+      };
+    };
+    for(var j = 0; j<radioAtributos.length; j++){
+        if(radioAtributos[j].checked === false){
+            resultado.innerHTML = "<h2>Selecione um atributo</h2>"
+            obterAtributo()
+        };
     };
   };
   function jogar(){
