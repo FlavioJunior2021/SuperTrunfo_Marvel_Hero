@@ -6,6 +6,7 @@
 
 var carta1 = {
     nome: "Homem aranha",
+    imamgem: "https://i.pinimg.com/originals/44/10/83/441083c0c8d8edeb6f0187e74147dd25.jpg",
     atributos:{
       forca: 85,
       defesa: 75,
@@ -14,6 +15,7 @@ var carta1 = {
   };
   var carta2 = {
     nome: "Capitão America",
+    imamgem: "http://1.bp.blogspot.com/-o1c-lwwMEIs/Vk5pozoCcXI/AAAAAAAAAsQ/HigEX_SpjXQ/s1600/capitao_america.jpg",
     atributos:{
       forca: 90,
       defesa: 100,
@@ -23,6 +25,7 @@ var carta1 = {
   };
   var carta3 = {
     nome: "Homem de Ferro",
+    imamgem: "http://3.bp.blogspot.com/-AdDVQ-NgdGE/UNBKmhr0-KI/AAAAAAAABp8/p_GiuXASIPs/s400/Iron_Man_bleeding_edge.jpg",
     atributos:{
        forca: 80,
       defesa: 88,
@@ -31,6 +34,7 @@ var carta1 = {
   };
   var carta4 = {
     nome: "Hulk",
+    imamgem: "http://pm1.narvii.com/6933/26ab0489816e81efc87e9de66658888ecd5eb89ar1-424-512v2_00.jpg",
     atributos:{
        forca: 100,
       defesa: 100,
@@ -39,6 +43,7 @@ var carta1 = {
   };
   var carta5 = {
     nome: "Doutor Estranho",
+    imamgem: "https://westfieldcomics.com/wow/art/large/NOV180933.jpg",
     atributos:{
        forca: 80,
       defesa: 85,
@@ -47,6 +52,7 @@ var carta1 = {
   };
   var carta6 = {
     nome: "Capitã Marvel",
+    imamgem: "https://i.pinimg.com/originals/b9/b5/3a/b9b53a947db0af96e4f60dfa2fd233d3.jpg",
     atributos:{
        forca: 100,
       defesa: 100,
