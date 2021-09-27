@@ -25,7 +25,7 @@ var carta1 = {
   };
   var carta3 = {
     nome: "Homem de Ferro",
-    imagem: "http://3.bp.blogspot.com/-AdDVQ-NgdGE/UNBKmhr0-KI/AAAAAAAABp8/p_GiuXASIPs/s400/Iron_Man_bleeding_edge.jpg",
+    imagem: "https://www.cinehero.com.br/wp-content/uploads/2021/01/gggggg.jpg",
     atributos:{
        forca: 80,
       defesa: 88,
@@ -76,7 +76,7 @@ var carta1 = {
   
      document.getElementById("btnSortear").disabled = true;
      document.getElementById("btnJogar").disabled = false;
-     exibirCartaJogador()
+     exibirCarta()
   }
   function exibirOpcoes(){
     var opcoes = document.getElementById("opcoes");
@@ -120,7 +120,7 @@ var carta1 = {
       document.getElementById("btnJogar").disabled = true;
     }
   }
-  function exibirCartaJogador(){
+  function exibirCarta(){
     var divCartaJogador = document.getElementById("carta-jogador");
     var divCartaMaquina = document.getElementById("carta-maquina");
     divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`
@@ -129,8 +129,10 @@ var carta1 = {
     var tagHTML = "<div id='opcoes' class='carta-status'>"
     var opcoesTexto = ""
     for(var atributo in cartaJogador.atributos){
-      opcoesTexto += "<input type='radio' name='atributo' class='inputOpcoes' value='"+ atributo +"'>"+atributo+ " " + cartaJogador.atributos[atributo]+"<br>";
+      opcoesTexto += "<input type='radio' name='atributo' class='opcoes' value='"+ atributo +"'>"+atributo + " " + cartaJogador.atributos[atributo]+"<br>";
     }
     var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`
-    divCartaJogador.innerHTML = moldura +  tagHTML +nome + opcoesTexto + "</div>"
+    var nomeMaquina = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
+    divCartaJogador.innerHTML = moldura +  tagHTML + nome + opcoesTexto + "</div>"
+    divCartaMaquina.innerHTML = moldura + tagHTML + nomeMaquina + "</div>"
   }
