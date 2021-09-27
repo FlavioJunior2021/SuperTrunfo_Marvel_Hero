@@ -9,39 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_873671-MLB25795091327_072017-O.jpg" class="page-logo" alt="">
-        <h1 class="page-title">Super Trunfo Marvel Super Hero</h1>
+  <div class="container">
+    <img src="https://logos-world.net/wp-content/uploads/2020/11/Marvel-Logo-2012-2014.png" class="page-logo"
+        alt="">
+    <h1 class="page-title">Super Trunfo</h1>
 
-        <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+    <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
 
-        <form id="form">
-            <h2>Escolha o seu atributo</h2>
-            <div class="opcoes" id="opcoes"></div>
-            
-            <div id="resultado"></div>
-            <div id="aviso-erro"></div>
-            <div class="wrapper">
-                <div>
-                  <div id="carta-jogador">
-                    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png" style=" width: inherit; height: inherit; position: absolute;">
-                    <h3></h3>
-                  </div>
-                </div>
-                <div>
-                  <div id="carta-maquina" class="carta"><img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png" style=" width: inherit; height: inherit; position: absolute;">
-                    
-                </div>
-                </div>
-            </div>
-        </form>
-        <button type="button" id="btnJogar" onclick="jogar()" disabled="false">Jogar</button>
-        <button type="button" id="btnReiniciar" onclick="reiniciar()" disabled="true">Reiniciar</button>
-
-        <div id="exibir-baralho">
-        
-        </div>
-    </div>
+    <form id="form">
+        <h2>Escolha o seu atributo</h2>
+        <div class="opcoes" id="opcoes"></div>
+        <button type="button" id="btnJogar" onclick="jogar()" disabled="true">Jogar</button>
+        <div id="resultado"></div> 
+    </form>
+  </div>
     <script src="assets/javascript/script.js" defer></script>
 </body>
 </html>

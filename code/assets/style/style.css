@@ -1,45 +1,52 @@
-body{
+body {
     font-family: 'Roboto Mono', monospace;
     min-height: 854px;
-    background-image: url('https://i0.wp.com/wallpaperaccess.com/full/2344041.jpg');
+    background-image: url('https://wallpapercave.com/wp/wp2436369.jpg');
     background-color: #000000;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     padding-bottom: 20vh;
 }
-.container{
+
+.container {
     text-align: center;
     padding: 20px;
 }
-.page-title{
-    color: #ffffff;
-    margin: 5px 0;
-}
-h2{
+
+.page-title {
     color: white;
+    margin: 5px 0;
+    text-transform: uppercase;
 }
-button{
+.page-logo{
+    width: 250;
+    height: 230px;
+}
+button {
     padding: .8rem 1.5rem;
     margin: 1rem 0;
     border-radius: 5px;
     border: none;
     font-size: 1rem;
-    width: 150px;
-    height: 50px;
+    color: black;
+    background-color: white;
+    transition: 0.5s;
+    font-weight: 700;
+    box-shadow: 2px 2px 4px rgba(16, 16, 16, 0.42);
+
 }
 button:hover{
-    background-color: rgb(218, 26, 26);
     color: white;
-    transform: scale(1.1);
-    filter: brightness(100%);
+    background-color: red;
+    transition: 0.5s;
 }
-.opcoes{
+h2 {
+    color: white;
     text-transform: uppercase;
-    font-weight: 700;
-    color: white;
 }
-#carta-jogador{
+
+#carta-jogador {
     width: 360px;
     height: 500px;
     overflow: auto;
@@ -47,72 +54,35 @@ button:hover{
     margin-bottom: 10px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
-   flex-wrap: wrap;
+    align-items: flex-end;
 }
-.carta-imagem{
-    border-radius: 5px;
+
+#carta-jogador h3 {
+    text-align: center;
+}
+
+.carta-imagem {
     border: 1px solid black;
     height: 100px;
     margin: 10px;
 }
 
-.carta-imagem img{
+.carta-imagem img {
     width: 100%;
     height: 100%;
 }
-.carta-status input{
-    text-align: justify;
-    z-index: 2;
-}
-.carta-status{
+
+.carta-status {
     height: 160px;
-    margin: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: white;
-    z-index: 2;
-}
-.wrapper{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-form{
-    display: flex;
-    flex-direction: column;
-}
-#carta-jogador,
-#carta-maquina {
-  width: 360px;
-  height: 500px;
-  overflow: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  background-size: 350px 300px;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 10px;
-  border-radius: 33px;
-}
-.carta-subtitle p {
-    margin-bottom: 2rem;
-}
-.carta-subtitle{
-    z-index: 2;
-    position: absolute;
-    top: 16px;
-    left: 37px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-#exibir-baralho{
-    display: flex;
-    margin-left: 150px;
+    margin: 1.5rem;
 }
 
+.carta-status input {
+    margin: 20px 10px;
+}
+
+.opcoes {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+}
