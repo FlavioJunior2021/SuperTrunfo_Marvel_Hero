@@ -148,3 +148,13 @@ form {
     margin: 1.8rem;
     color:black;
 }
+#todasAsCartas{
+    display: flex;
+    flex-direction: row;
+}
+#todasAsCartas img{
+    width: 180px;
+    height: 250px;
+    border-radius: 18px;
+    padding: 18px;
+}
