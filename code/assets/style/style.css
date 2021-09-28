@@ -151,6 +151,8 @@ form {
 #todasAsCartas{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #todasAsCartas img{
     width: 180px;
