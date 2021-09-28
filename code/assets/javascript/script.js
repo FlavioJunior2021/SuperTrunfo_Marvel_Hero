@@ -45,7 +45,7 @@ var carta1 = {
     nome: "Doutor Estranho",
     imagem: "https://westfieldcomics.com/wow/art/large/NOV180933.jpg",
     atributos:{
-       forca: 80,
+       forca: 90,
       defesa: 85,
       inteligencia: 97
     }
