@@ -59,7 +59,43 @@ var carta1 = {
       inteligencia: 85
     }
   };
-  var baralho = [carta1,carta2,carta3,carta4,carta5,carta6];
+  var carta7 = {
+    nome: "Soldado Invernal",
+    imagem: "https://pbs.twimg.com/media/EOrqiHAX4AE_NMl.jpg",
+    atributos:{
+      forca: 90,
+      defesa: 85,
+      inteligencia: 80
+    }
+  }
+  var carta8 = {
+    nome: "Venon",
+    imagem: "https://i.pinimg.com/564x/a5/72/aa/a572aa873393288b3870b4a6769243c4.jpg",
+    atributos:{
+      forca: 90,
+      defesa: 90,
+      inteligencia: 60
+    }
+  }
+  var carta9 = {
+    nome: "Thanos",
+    imagem: "https://universohq.com/wp-content/uploads/2014/10/thanos_rising.jpg",
+    atributos:{
+      forca: 100,
+      defesa: 100,
+      inteligencia: 99
+    }
+  }
+  var carta10 = {
+    nome: "Senhor das estrelas",
+    imagem: "https://nerdbreak.com.br/wp-content/uploads/2017/04/starlord-001.jpg",
+    atributos:{
+      forca: 88,
+      defesa: 75,
+      inteligencia: 80
+    }
+  }
+  var baralho = [carta1,carta2,carta3,carta4,carta5,carta6,carta7,carta8,carta9,carta10];
   //criando variavel para guardar a carta do jogador e a carta da maquina
   var cartaJogador
   var cartaMaquina
@@ -120,6 +156,7 @@ var carta1 = {
       document.getElementById("btnJogar").disabled = true;
     }
     exibirCartaMaquina()
+    document.getElementById("btnReset").disabled = false;
   }
   function exibirCarta(){
     var divCartaJogador = document.getElementById("carta-jogador");
@@ -145,4 +182,16 @@ var carta1 = {
     }
     var nomeMaquina = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
     divCartaMaquina.innerHTML = moldura + tagHTML + nomeMaquina + opcoesTexto + "</div>"
+}
+function reset(){
+  var divCartaMaquina = document.getElementById("carta-maquina");
+  var divCartaJogador = document.getElementById("carta-jogador");
+  var moldura = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'>"
+  divCartaMaquina.style.backgroundImage = ""
+  divCartaJogador.style.backgroundImage = ""
+  divCartaJogador.innerHTML = moldura
+  divCartaMaquina.innerHTML = moldura
+
+
+  document.getElementById("btnSortear").disabled = false;
 }
