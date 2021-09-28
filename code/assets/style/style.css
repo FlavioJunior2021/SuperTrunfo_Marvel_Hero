@@ -62,7 +62,12 @@ h2 {
     background-position-y: 10px;
     border-radius: 33px;
 }
-
+#carta-jogador:hover{
+    transform: translateY(-5px);
+}
+#carta-maquina:hover{
+    transform: translateY(-5px);
+}
 #carta-jogador h3 {
     text-align: center;
 }
