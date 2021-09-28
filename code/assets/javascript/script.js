@@ -195,6 +195,3 @@ function reset(){
 
   document.getElementById("btnSortear").disabled = false;
 }
-function exibirTodasAsCartas(){
-  var divExibir = document.getElementById("todasAsCartas")
-}
