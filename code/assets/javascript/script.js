@@ -124,7 +124,7 @@ var carta1 = {
   function exibirCarta(){
     var divCartaJogador = document.getElementById("carta-jogador");
     divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`
-    var moldura = "<img src='https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png' style=' width: inherit; height: inherit; position: absolute;'>"
+    var moldura = "<img src='https://i.pinimg.com/originals/4e/49/06/4e490632804acd7d22a85d0bcf3e319e.png' style=' width: inherit; height: inherit; position: absolute;'>"
     var tagHTML = "<div id='opcoes' class='carta-status'>"
     var opcoesTexto = ""
     for(var atributo in cartaJogador.atributos){
@@ -137,11 +137,11 @@ var carta1 = {
     var divCartaMaquina = document.getElementById("carta-maquina");
     divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
 
-    var moldura = "<img src='https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png' style=' width: inherit; height: inherit; position: absolute;'>"
+    var moldura = "<img src='https://i.pinimg.com/originals/4e/49/06/4e490632804acd7d22a85d0bcf3e319e.png' style=' width: inherit; height: inherit; position: absolute;'>"
     var tagHTML = "<div id='opcoes' class='carta-status'>"
     var opcoesTexto = ""
     for(var atributo in cartaMaquina.atributos){
-      opcoesTexto += "<p>"+atributo + " " + cartaMaquina.atributos[atributo]+"</p>";
+      opcoesTexto += "<p class='cartamaquinaP'>"+atributo + " " + cartaMaquina.atributos[atributo]+"</p>";
     }
     var nomeMaquina = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
     divCartaMaquina.innerHTML = moldura + tagHTML + nomeMaquina + opcoesTexto + "</div>"

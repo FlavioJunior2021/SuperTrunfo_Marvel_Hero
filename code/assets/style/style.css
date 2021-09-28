@@ -79,10 +79,11 @@ h2 {
 }
 
 .carta-status {
-    height: 170px;
+    height: 160px;
     margin: 2rem;
     z-index: 2;
-    color: white;
+    color:  #000000;
+    text-align: justify;
 }
 
 .carta-status input {
@@ -137,4 +138,8 @@ form {
 .carta-status p {
     margin-bottom: 2rem;
     color: #000000;
+}
+.carta-status .cartamaquinaP{
+    margin: 1.8rem;
+    color:black;
 }
