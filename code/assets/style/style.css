@@ -170,3 +170,40 @@ form {
     transform:  rotateX(0deg) rotateY(180deg);
     transition: 0.5s;
 }
+@media (min-width: 360px) and (min-height: 740px) {
+    .page-logo{
+        width: 150px;
+        height: 150px;
+    }
+    .page-title{
+        font-size: 26px;
+    }
+    button {
+        padding: 1.5rem 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        border: none;
+        font-size: 0.9rem;
+    }
+    h2{
+        font-size: 16px;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        width: 90%;
+    }
+    #carta-jogador, #carta-maquina{
+        width: 260px;
+        height: 500px;
+        margin: 16px;
+    }
+    #todasAsCartas img{
+        width: 180px;
+        height: 250px;
+        border-radius: 25px;
+        padding: 18px;
+        opacity: 0.9;
+    }
+}
