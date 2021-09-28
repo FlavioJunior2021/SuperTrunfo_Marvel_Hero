@@ -82,6 +82,7 @@ h2 {
     height: 170px;
     margin: 2rem;
     z-index: 2;
+    color: white;
 }
 
 .carta-status input {
@@ -135,4 +136,5 @@ form {
 
 .carta-status p {
     margin-bottom: 2rem;
+    color: #000000;
 }
