@@ -157,4 +157,14 @@ form {
     height: 250px;
     border-radius: 18px;
     padding: 18px;
+    transition: 0.5s;
+}
+#todasAsCartas img:hover{
+    opacity: 0.0;
+    -webkit-transform: rotateX(0deg) rotateY(180deg);
+    -moz-transform: rotateX(0deg) rotateY(180deg);
+    -ms-transform: rotateX(0deg) rotateY(180deg);
+    -o-transform: rotateX(0deg) rotateY(180deg);
+    transform:  rotateX(0deg) rotateY(180deg);
+    transition: 0.5s;
 }
