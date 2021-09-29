@@ -5,7 +5,7 @@ var carta1 = {
     nome: "Homem aranha",
     imagem: "https://i.pinimg.com/originals/44/10/83/441083c0c8d8edeb6f0187e74147dd25.jpg",
     atributos:{
-      forca: 85,
+      forca: 95,
       defesa: 75,
       inteligencia: 95
   }
