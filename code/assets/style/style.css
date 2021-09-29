@@ -1,12 +1,12 @@
 body {
     font-family: 'Roboto Mono', monospace;
-    min-height: 854px;
     background-image: url('https://wallpapercave.com/wp/wp2436369.jpg');
     background-color: #000000;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     padding-bottom: 20vh;
+    min-height: 500px;
 }
 
 .container {
@@ -170,7 +170,7 @@ form {
     transform:  rotateX(0deg) rotateY(180deg);
     transition: 0.5s;
 }
-@media (min-width: 360px) and (min-height: 740px) {
+@media (min-width: 360px) and (min-height: 640px) {
     .page-logo{
         width: 150px;
         height: 150px;
