@@ -110,7 +110,14 @@ var carta1 = {
   
      document.getElementById("btnSortear").disabled = true;
      document.getElementById("btnJogar").disabled = false;
-     exibirCarta()
+     setTimeout(function(){
+      exibirCarta()
+      embaralhandoCartas.innerHTML = ""
+     }, 5000);
+     
+
+     var embaralhandoCartas = document.getElementById("embaralhandoCartas");
+     embaralhandoCartas.innerHTML = "<h2> Embaralhando cartas </h2>"
   }
   function exibirOpcoes(){
     var opcoes = document.getElementById("opcoes");
@@ -184,11 +191,13 @@ var carta1 = {
 function reset(){
   var divCartaMaquina = document.getElementById("carta-maquina");
   var divCartaJogador = document.getElementById("carta-jogador");
+  var resultado = document.getElementById("resultado-final");
   var moldura = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'>"
   divCartaMaquina.style.backgroundImage = ""
   divCartaJogador.style.backgroundImage = ""
   divCartaJogador.innerHTML = moldura
   divCartaMaquina.innerHTML = moldura
+  resultado.innerHTML = ""
 
 
   document.getElementById("btnSortear").disabled = false;
