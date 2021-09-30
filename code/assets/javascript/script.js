@@ -193,9 +193,7 @@ function reset(){
 
   document.getElementById("btnSortear").disabled = false;
 }
-//função embaralhar cartas 
-var baralhoMaquia = []
-var baralhoJogador = []
+//função embaralhar cartas
 
 function embaralharCartas(embaralhar){
   for(var i = embaralhar.length -1; i>0; i--){
@@ -203,4 +201,14 @@ function embaralharCartas(embaralhar){
     [embaralhar[i], embaralhar[j]] = [embaralhar[j], embaralhar[i]];
   }
   return embaralhar;
+}
+var cartasMaquina = []
+var cartasJogador = []
+function dividirCartas(dividir){
+  for(var i = dividir.length -1; i>0; i--){
+    cartasJogador = dividir.slice(0,5)
+    cartasMaquina = dividir.slice(5,10)
+    var baralhoDivido = [cartasJogador,cartasMaquina]
+  }
+  return baralhoDivido
 }
