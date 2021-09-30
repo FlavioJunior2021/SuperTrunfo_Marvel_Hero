@@ -25,7 +25,7 @@ var carta1 = {
     nome: "Homem de Ferro",
     imagem: "https://www.cinehero.com.br/wp-content/uploads/2021/01/gggggg.jpg",
     atributos:{
-       forca: 80,
+      forca: 90,
       defesa: 88,
       inteligencia: 100
     }
@@ -34,7 +34,7 @@ var carta1 = {
     nome: "Hulk",
     imagem: "http://pm1.narvii.com/6933/26ab0489816e81efc87e9de66658888ecd5eb89ar1-424-512v2_00.jpg",
     atributos:{
-       forca: 100,
+      forca: 100,
       defesa: 100,
       inteligencia: 15
     }
@@ -43,7 +43,7 @@ var carta1 = {
     nome: "Doutor Estranho",
     imagem: "https://westfieldcomics.com/wow/art/large/NOV180933.jpg",
     atributos:{
-       forca: 90,
+      forca: 90,
       defesa: 85,
       inteligencia: 97
     }
@@ -52,7 +52,7 @@ var carta1 = {
     nome: "Capitã Marvel",
     imagem: "https://i.pinimg.com/originals/b9/b5/3a/b9b53a947db0af96e4f60dfa2fd233d3.jpg",
     atributos:{
-       forca: 100,
+      forca: 100,
       defesa: 100,
       inteligencia: 85
     }
@@ -114,7 +114,11 @@ var carta1 = {
       exibirCarta()
       embaralhandoCartas.innerHTML = ""
      }, 5000);
-     
+
+
+     embaralharCartas(baralho)
+     dividirCartas(baralho)
+     exposeCardsPlayer()
 
      var embaralhandoCartas = document.getElementById("embaralhandoCartas");
      embaralhandoCartas.innerHTML = "<h2> Embaralhando cartas </h2>"
@@ -213,6 +217,7 @@ function embaralharCartas(embaralhar){
 }
 var cartasMaquina = []
 var cartasJogador = []
+
 function dividirCartas(dividir){
   for(var i = dividir.length -1; i>0; i--){
     cartasJogador = dividir.slice(0,5)
@@ -220,4 +225,11 @@ function dividirCartas(dividir){
     var baralhoDivido = [cartasJogador,cartasMaquina]
   }
   return baralhoDivido
+}
+function exposeCardsPlayer(){
+  var exposeCardsPlayerDiv = document.getElementById("exposeCardsPlayer");
+  exposeCardsPlayerDiv.innerHTML = ""
+  for(var i = 0; i < cartasJogador.length; i++){
+      exposeCardsPlayerDiv.innerHTML += `<h2>${cartasJogador[i].nome}</h2>`
+    }
 }
