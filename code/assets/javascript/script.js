@@ -1,4 +1,4 @@
-//Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
+
 //Adicionar a imagem do personagem assim que você selecionar a carta dele
 
 var carta1 = {
@@ -136,20 +136,20 @@ var carta1 = {
   };
   function jogar(){
     var atributoSelecionado = obterAtributo()
-    var resultado = document.getElementById("resultado");
+    var resultado = document.getElementById("resultado-final");
     console.log(atributoSelecionado)
     console.log(cartaJogador.atributos[atributoSelecionado])
     
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
     if(valorCartaMaquina>valorCartaJogador){
-      resultado.innerHTML = "<h2>Você perdeu</h2>"
+      resultado.innerHTML = "<h2 class='resultado-final'>Você perdeu</h2>"
       document.getElementById("btnJogar").disabled = true;
     } else if(valorCartaJogador>valorCartaMaquina){
-      resultado.innerHTML = "<h2>Você Venceu!</h2>"
+      resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>"
       document.getElementById("btnJogar").disabled = true;
     } else {
-      resultado.innerHTML = "<h2>Empate!</h2>"
+      resultado.innerHTML =  "<h2 class='resultado-final'>EMPATE!</h2>"
       document.getElementById("btnJogar").disabled = true;
     }
     exibirCartaMaquina()
@@ -192,3 +192,4 @@ function reset(){
 
   document.getElementById("btnSortear").disabled = false;
 }
+//Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
