@@ -1,5 +1,6 @@
 
 //Adicionar a imagem do personagem assim que você selecionar a carta dele
+//Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
 
 var carta1 = {
     nome: "Homem aranha",
@@ -192,4 +193,14 @@ function reset(){
 
   document.getElementById("btnSortear").disabled = false;
 }
-//Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
+//função embaralhar cartas 
+var baralhoMaquia = []
+var baralhoJogador = []
+
+function embaralharCartas(embaralhar){
+  for(var i = embaralhar.length -1; i>0; i--){
+    const j = Math.floor(Math.random() * (i+1));
+    [embaralhar[i], embaralhar[j]] = [embaralhar[j], embaralhar[i]];
+  }
+  return embaralhar;
+}
