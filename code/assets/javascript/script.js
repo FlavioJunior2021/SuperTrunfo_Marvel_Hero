@@ -114,12 +114,7 @@ var carta1 = {
       exibirCarta()
       embaralhandoCartas.innerHTML = ""
      }, 5000);
-
-
-     embaralharCartas(baralho)
-     dividirCartas(baralho)
-     exposeCardsPlayer()
-
+     
      var embaralhandoCartas = document.getElementById("embaralhandoCartas");
      embaralhandoCartas.innerHTML = "<h2> Embaralhando cartas </h2>"
   }
