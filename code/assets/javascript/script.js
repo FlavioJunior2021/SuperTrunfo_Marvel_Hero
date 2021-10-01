@@ -200,7 +200,7 @@ function reset(){
   divCartaJogador.innerHTML = moldura
   divCartaMaquina.innerHTML = moldura
   resultado.innerHTML = ""
-  document.getElementById("btnSortear").disabled = true;
+  document.getElementById("btnSortear").disabled = true;  
   newRound()
   exibirCarta()
   exibirCartaMaquinaSemAtributos()

@@ -138,6 +138,12 @@ form {
     display: flex;
     justify-content: space-between;
 }
+.exposedCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .carta-status p {
     margin-bottom: 2rem;
