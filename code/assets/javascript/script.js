@@ -99,14 +99,17 @@ var carta1 = {
   var cartaMaquina
   //função para sortear cartas do jogo
   function sortearCarta(){
-    var numeroCartaMaquina = parseInt(Math.random()*baralho.length);
-    cartaMaquina = baralho[numeroCartaMaquina];
+
+    embaralharCartas(baralho)
+    dividirCartas(baralho)
+    var numeroCartaMaquina = parseInt(Math.random()*cartasMaquina.length);
+    cartaMaquina = cartasMaquina[numeroCartaMaquina];
     
-    var numeroCartaJogador = parseInt(Math.random()*baralho.length)
+    var numeroCartaJogador = parseInt(Math.random()*cartasJogador.length)
     while(numeroCartaJogador==numeroCartaMaquina){
-      var numeroCartaJogador = parseInt(Math.random()*baralho.length)
+      var numeroCartaJogador = parseInt(Math.random()*cartasJogador.length)
     };
-    cartaJogador = baralho[numeroCartaJogador];
+    cartaJogador = cartasJogador[numeroCartaJogador];
   
      document.getElementById("btnSortear").disabled = true;
      document.getElementById("btnJogar").disabled = false;
@@ -197,9 +200,33 @@ function reset(){
   divCartaJogador.innerHTML = moldura
   divCartaMaquina.innerHTML = moldura
   resultado.innerHTML = ""
-
-
-  document.getElementById("btnSortear").disabled = false;
+  document.getElementById("btnSortear").disabled = true;
+  newRound()
+  exibirCarta()
+  exibirCartaMaquinaSemAtributos()
+}
+function exibirCartaMaquinaSemAtributos(){
+  var divCartaMaquina = document.getElementById("carta-maquina");
+    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
+    var moldura = "<img src='https://i.pinimg.com/originals/4e/49/06/4e490632804acd7d22a85d0bcf3e319e.png' style=' width: inherit; height: inherit; position: absolute;'>"
+    var tagHTML = "<div id='opcoes' class='carta-status'>"
+    var opcoesTexto = ""
+    for(var atributo in cartaMaquina.atributos){
+      opcoesTexto += "<p class='cartamaquinaP'>"+atributo+"</p>";
+    }
+    var nomeMaquina = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
+    divCartaMaquina.innerHTML = moldura + tagHTML + nomeMaquina + opcoesTexto + "</div>"
+}
+function newRound(){
+  var numeroCartaMaquina = parseInt(Math.random()*cartasMaquina.length);
+  cartaMaquina = cartasMaquina[numeroCartaMaquina];
+  
+  var numeroCartaJogador = parseInt(Math.random()*cartasJogador.length)
+  while(numeroCartaJogador==numeroCartaMaquina){
+    var numeroCartaJogador = parseInt(Math.random()*cartasJogador.length)
+  };
+  cartaJogador = cartasJogador[numeroCartaJogador];
+  document.getElementById("btnJogar").disabled = false;
 }
 //função embaralhar cartas
 
