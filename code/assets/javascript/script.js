@@ -158,7 +158,10 @@ var carta1 = {
       pickUpPlayer()
       if(cartasJogador.length===0){
         resultado.innerHTML = "<h2 class='resultado-final'>Suas cartas acabaram, a maquina venceu!</h2>"
+        document.getElementById("carta-jogador").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
+        document.getElementById("carta-maquina").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
         document.getElementById("btnSortear").disabled = false;
+        document.getElementById("btnReset").disabled = true;
       }
     } else if(valorCartaJogador>valorCartaMaquina){
       resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>"
@@ -166,14 +169,16 @@ var carta1 = {
       pickUpMachine();
       if(cartasMaquina.length===0){
         resultado.innerHTML = "<h2 class='resultado-final'>As cartas da maquina acabaram, você venceu!</h2>"
+        document.getElementById("carta-jogador").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
+        document.getElementById("carta-maquina").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
         document.getElementById("btnSortear").disabled = false;
+        document.getElementById("btnReset").disabled = true;
       };
     } else {
       resultado.innerHTML =  "<h2 class='resultado-final'>EMPATE!</h2>"
       document.getElementById("btnJogar").disabled = true;
     }
     exibirCartaMaquina()
-    document.getElementById("btnReset").disabled = false;
   }
   function pickUpMachine(){
     var lostLetter = cartasMaquina.indexOf(cartaMaquina);
