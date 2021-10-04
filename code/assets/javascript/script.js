@@ -110,9 +110,6 @@ var carta1 = {
       var numeroCartaJogador = parseInt(Math.random()*cartasJogador.length)
     };
     cartaJogador = cartasJogador[numeroCartaJogador];
-  
-     document.getElementById("btnSortear").disabled = true;
-     document.getElementById("btnJogar").disabled = false;
      setTimeout(function(){
       exibirCarta()
       embaralhandoCartas.innerHTML = ""
@@ -120,6 +117,8 @@ var carta1 = {
      
      var embaralhandoCartas = document.getElementById("embaralhandoCartas");
      embaralhandoCartas.innerHTML = "<h2> Embaralhando cartas </h2>"
+     document.getElementById("btnJogar").disabled = false;
+     document.getElementById("btnSortear").disabled = false;
   }
   function exibirOpcoes(){
     var opcoes = document.getElementById("opcoes");
@@ -155,6 +154,7 @@ var carta1 = {
     if(valorCartaMaquina>valorCartaJogador){
       resultado.innerHTML = "<h2 class='resultado-final'>Você perdeu</h2>"
       document.getElementById("btnJogar").disabled = true;
+      document.getElementById("btnReset").disabled = false;
       pickUpPlayer()
       if(cartasJogador.length===0){
         resultado.innerHTML = "<h2 class='resultado-final'>Suas cartas acabaram, a maquina venceu!</h2>"
@@ -164,8 +164,8 @@ var carta1 = {
         document.getElementById("btnReset").disabled = true;
       }
     } else if(valorCartaJogador>valorCartaMaquina){
-      resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>"
-      document.getElementById("btnJogar").disabled = true;
+      resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>";
+      document.getElementById("btnReset").disabled = false;
       pickUpMachine();
       if(cartasMaquina.length===0){
         resultado.innerHTML = "<h2 class='resultado-final'>As cartas da maquina acabaram, você venceu!</h2>"
