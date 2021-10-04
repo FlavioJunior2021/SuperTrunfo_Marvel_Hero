@@ -155,10 +155,19 @@ var carta1 = {
     if(valorCartaMaquina>valorCartaJogador){
       resultado.innerHTML = "<h2 class='resultado-final'>Você perdeu</h2>"
       document.getElementById("btnJogar").disabled = true;
+      pickUpPlayer()
+      if(cartasJogador.length===0){
+        resultado.innerHTML = "<h2 class='resultado-final'>Suas cartas acabaram, a maquina venceu!</h2>"
+        document.getElementById("btnSortear").disabled = false;
+      }
     } else if(valorCartaJogador>valorCartaMaquina){
       resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>"
       document.getElementById("btnJogar").disabled = true;
       pickUpMachine();
+      if(cartasMaquina.length===0){
+        resultado.innerHTML = "<h2 class='resultado-final'>As cartas da maquina acabaram, você venceu!</h2>"
+        document.getElementById("btnSortear").disabled = false;
+      };
     } else {
       resultado.innerHTML =  "<h2 class='resultado-final'>EMPATE!</h2>"
       document.getElementById("btnJogar").disabled = true;
@@ -167,9 +176,14 @@ var carta1 = {
     document.getElementById("btnReset").disabled = false;
   }
   function pickUpMachine(){
-    var cartaPerdida = cartasMaquina.indexOf(cartaMaquina);
-    cartasMaquina.splice(cartaPerdida, 1)
-    console.log(cartasMaquina)
+    var lostLetter = cartasMaquina.indexOf(cartaMaquina);
+    cartasMaquina.splice(lostLetter, 1);
+    console.log(cartasMaquina);
+  }
+  function pickUpPlayer(){
+    var lostLetter = cartasJogador.indexOf(cartaJogador);
+    cartasJogador.splice(lostLetter,1);
+    console.log(cartasJogador);
   }
   function exibirCarta(){
     var divCartaJogador = document.getElementById("carta-jogador");
