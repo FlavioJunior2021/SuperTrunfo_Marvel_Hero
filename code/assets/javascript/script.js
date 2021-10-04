@@ -158,12 +158,18 @@ var carta1 = {
     } else if(valorCartaJogador>valorCartaMaquina){
       resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>"
       document.getElementById("btnJogar").disabled = true;
+      pickUpMachine();
     } else {
       resultado.innerHTML =  "<h2 class='resultado-final'>EMPATE!</h2>"
       document.getElementById("btnJogar").disabled = true;
     }
     exibirCartaMaquina()
     document.getElementById("btnReset").disabled = false;
+  }
+  function pickUpMachine(){
+    var cartaPerdida = cartasMaquina.indexOf(cartaMaquina);
+    cartasMaquina.splice(cartaPerdida, 1)
+    console.log(cartasMaquina)
   }
   function exibirCarta(){
     var divCartaJogador = document.getElementById("carta-jogador");
