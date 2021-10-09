@@ -161,7 +161,7 @@ var carta1 = {
       document.getElementById("btnJogar").disabled = true;
       document.getElementById("btnReset").disabled = false;
       pickUpPlayer()
-      if(cartasJogador.length===0){
+      if(cartasJogador.length===1){
         resultado.innerHTML = "<h2 class='resultado-final'>Suas cartas acabaram, a maquina venceu!</h2>"
         document.getElementById("carta-jogador").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
         document.getElementById("carta-maquina").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
@@ -172,7 +172,7 @@ var carta1 = {
       resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>";
       document.getElementById("btnReset").disabled = false;
       pickUpMachine();
-      if(cartasMaquina.length===0){
+      if(cartasMaquina.length===1){
         resultado.innerHTML = "<h2 class='resultado-final'>As cartas da maquina acabaram, você venceu!</h2>"
         document.getElementById("carta-jogador").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
         document.getElementById("carta-maquina").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
