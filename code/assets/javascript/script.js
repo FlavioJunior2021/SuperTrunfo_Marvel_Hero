@@ -123,6 +123,7 @@ var carta1 = {
      embaralhandoCartas.innerHTML = "<h2> Embaralhando cartas </h2>"
      document.getElementById("btnJogar").disabled = false;
      document.getElementById("btnSortear").disabled = false;
+     document.getElementById("carta-maquina").innerHTML = '<img src="https://wallpaperaccess.com/full/4834549.jpg" style=" width: inherit; height: inherit; position: absolute;">'
   }
   function exibirOpcoes(){
     var opcoes = document.getElementById("opcoes");
@@ -130,7 +131,7 @@ var carta1 = {
     for(var atributo in cartaJogador.atributos){
       opcoesTexto += "<input type='radio' name='atributo' class='inputOpcoes' value='"+ atributo +"'>"+atributo
     }
-    opcoes.innerHTML = opcoesTexto
+    opcoes.innerHTML = opcoesTexto;
   }
   function obterAtributo(){
     var radioAtributos = document.getElementsByName("atributo");
@@ -150,8 +151,8 @@ var carta1 = {
   function jogar(){
     var atributoSelecionado = obterAtributo()
     var resultado = document.getElementById("resultado-final");
-    console.log(atributoSelecionado)
-    console.log(cartaJogador.atributos[atributoSelecionado])
+    console.log(atributoSelecionado);
+    console.log(cartaJogador.atributos[atributoSelecionado]);
     
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
@@ -166,7 +167,7 @@ var carta1 = {
         document.getElementById("carta-maquina").innerHTML = "<img src='https://wallpaperaccess.com/full/4834549.jpg' style=' width: inherit; height: inherit; position: absolute;'></img>"
         document.getElementById("btnSortear").disabled = false;
         document.getElementById("btnReset").disabled = true;
-      }
+      };
     } else if(valorCartaJogador>valorCartaMaquina){
       resultado.innerHTML =  "<h2 class='resultado-final'>Você Venceu!</h2>";
       document.getElementById("btnReset").disabled = false;
@@ -181,20 +182,22 @@ var carta1 = {
     } else {
       resultado.innerHTML =  "<h2 class='resultado-final'>EMPATE!</h2>"
       document.getElementById("btnJogar").disabled = true;
-    }
-    exibirCartaMaquina()
-  }
+    };
+    exibirCartaMaquina();
+  };
   function pickUpMachine(){
     stealetterMachine()
     let lostLetter = cartasMaquina.indexOf(cartaMaquina);
     cartasMaquina.splice(lostLetter,1)
     console.log(cartasMaquina)
-  }
+  };
   function pickUpPlayer(){
+    stealLetterPlayer()
     var lostLetter = cartasJogador.indexOf(cartaJogador);
     cartasJogador.splice(lostLetter,1);
     console.log(cartasJogador);
-  }
+    exposeCardsPlayer()
+  };
   function exibirCarta(){
     var divCartaJogador = document.getElementById("carta-jogador");
     divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`
@@ -206,7 +209,7 @@ var carta1 = {
     }
     var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`
     divCartaJogador.innerHTML = moldura +  tagHTML + nome + opcoesTexto + "</div>"
-}
+};
   function exibirCartaMaquina(){
     var divCartaMaquina = document.getElementById("carta-maquina");
     divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
@@ -219,7 +222,7 @@ var carta1 = {
     }
     var nomeMaquina = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
     divCartaMaquina.innerHTML = moldura + tagHTML + nomeMaquina + opcoesTexto + "</div>"
-}
+};
 function reset(){
   var divCartaMaquina = document.getElementById("carta-maquina");
   var divCartaJogador = document.getElementById("carta-jogador");
@@ -234,7 +237,7 @@ function reset(){
   newRound()
   exibirCarta()
   exibirCartaMaquinaSemAtributos()
-}
+};
 function exibirCartaMaquinaSemAtributos(){
   var divCartaMaquina = document.getElementById("carta-maquina");
     divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
@@ -246,7 +249,7 @@ function exibirCartaMaquinaSemAtributos(){
     }
     var nomeMaquina = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
     divCartaMaquina.innerHTML = moldura + tagHTML + nomeMaquina + opcoesTexto + "</div>"
-}
+};
 function newRound(){
   var numeroCartaMaquina = parseInt(Math.random()*cartasMaquina.length);
   cartaMaquina = cartasMaquina[numeroCartaMaquina];
@@ -257,7 +260,7 @@ function newRound(){
   };
   cartaJogador = cartasJogador[numeroCartaJogador];
   document.getElementById("btnJogar").disabled = false;
-}
+};
 //função embaralhar cartas
 
 function embaralharCartas(embaralhar){
@@ -266,7 +269,7 @@ function embaralharCartas(embaralhar){
     [embaralhar[i], embaralhar[j]] = [embaralhar[j], embaralhar[i]];
   }
   return embaralhar;
-}
+};
 var cartasMaquina = []
 var cartasJogador = []
 
@@ -277,12 +280,18 @@ function dividirCartas(dividir){
     var baralhoDivido = [cartasJogador,cartasMaquina]
   }
   return baralhoDivido
-}
+};
 const stealetterMachine = () =>{
   var index = cartasMaquina.indexOf(cartaMaquina);
   cartasJogador.push(cartasMaquina[index]);
-  console.log(cartasJogador)
-}
+  console.log(cartasJogador);
+  exposeCardsPlayer()
+};
+const stealLetterPlayer = () =>{
+  var index = cartasJogador.indexOf(cartaJogador);
+  cartasMaquina.push(cartasJogador[index]);
+  console.log(cartasMaquina);
+};
 
 function exposeCardsPlayer(){
   var exposeCardsPlayerDiv = document.getElementById("exposedCardsPlayer");
@@ -290,4 +299,4 @@ function exposeCardsPlayer(){
   for(var i = 0; i < cartasJogador.length; i++){
       exposeCardsPlayerDiv.innerHTML += `<img src='${cartasJogador[i].imagem}' style=' width: 150px; height: 230px;'></img>`
     }
-}
+};
