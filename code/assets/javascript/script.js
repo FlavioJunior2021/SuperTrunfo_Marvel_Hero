@@ -185,9 +185,10 @@ var carta1 = {
     exibirCartaMaquina()
   }
   function pickUpMachine(){
-    var lostLetter = cartasMaquina.indexOf(cartaMaquina);
-    cartasMaquina.splice(lostLetter, 1);
-    console.log(cartasMaquina);
+    stealetterMachine()
+    let lostLetter = cartasMaquina.indexOf(cartaMaquina);
+    cartasMaquina.splice(lostLetter,1)
+    console.log(cartasMaquina)
   }
   function pickUpPlayer(){
     var lostLetter = cartasJogador.indexOf(cartaJogador);
@@ -277,6 +278,12 @@ function dividirCartas(dividir){
   }
   return baralhoDivido
 }
+const stealetterMachine = () =>{
+  var index = cartasMaquina.indexOf(cartaMaquina);
+  cartasJogador.push(cartasMaquina[index]);
+  console.log(cartasJogador)
+}
+
 function exposeCardsPlayer(){
   var exposeCardsPlayerDiv = document.getElementById("exposedCardsPlayer");
   exposeCardsPlayerDiv.innerHTML = "";
