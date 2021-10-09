@@ -102,6 +102,10 @@ var carta1 = {
 
     embaralharCartas(baralho)
     dividirCartas(baralho)
+    setTimeout(function(){
+      exposeCardsPlayer()
+    },5000);
+   
     var numeroCartaMaquina = parseInt(Math.random()*cartasMaquina.length);
     cartaMaquina = cartasMaquina[numeroCartaMaquina];
     
@@ -274,9 +278,9 @@ function dividirCartas(dividir){
   return baralhoDivido
 }
 function exposeCardsPlayer(){
-  var exposeCardsPlayerDiv = document.getElementById("exposeCardsPlayer");
-  exposeCardsPlayerDiv.innerHTML = ""
+  var exposeCardsPlayerDiv = document.getElementById("exposedCardsPlayer");
+  exposeCardsPlayerDiv.innerHTML = "";
   for(var i = 0; i < cartasJogador.length; i++){
-      exposeCardsPlayerDiv.innerHTML += `<h2>${cartasJogador[i].nome}</h2>`
+      exposeCardsPlayerDiv.innerHTML += `<img src='${cartasJogador[i].imagem}' style=' width: 150px; height: 230px;'></img>`
     }
 }
